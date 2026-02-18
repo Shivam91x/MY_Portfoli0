@@ -5,6 +5,8 @@ import About from "./pages/About";
 import Projects from "./pages/Project";
 import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
+import Resume from './pages/Resume'
+import Services from "./pages/Services";
 import React from 'react'
 
 export default function App() {
@@ -14,8 +16,10 @@ export default function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/service" element={<Services />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/skills" element={<Skills />} />
+          <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>

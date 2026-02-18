@@ -1,16 +1,17 @@
+// MainLayout.jsx
 import { Outlet } from "react-router-dom";
+import React from "react";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
-import React from 'react'
 
 export default function MainLayout() {
   return (
     <>
-      <Navbar />
-      <main className="min-h-screen">
+      {/* <Navbar /> */}
+      <main className="pt-14 px-6">
         <Outlet />
       </main>
-      <Footer />
+      <Footer ></Footer>
     </>
   );
 }

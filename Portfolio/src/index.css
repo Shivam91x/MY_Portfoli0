@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
+:root {
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: "gilroy", system-ui, sans-serif;
+}
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
+body {
+  font-family: var(--font-body);
 }
