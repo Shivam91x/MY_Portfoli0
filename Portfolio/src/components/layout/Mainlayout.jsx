@@ -7,11 +7,11 @@ import Footer from "../Footer";
 export default function MainLayout() {
   return (
     <>
-      {/* <Navbar /> */}
-      <main className="pt-14 px-6">
+      <Navbar />
+      <main className="pt-1 px-6">
         <Outlet />
       </main>
-      <Footer ></Footer>
+      {/* <Footer ></Footer> */}
     </>
   );
 }

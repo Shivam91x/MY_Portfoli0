@@ -1,5 +1,7 @@
 import { FaGithub, FaLinkedinIn, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import { IoSendSharp } from "react-icons/io5";
+import { MdAttachEmail } from "react-icons/md";
+
 import React from "react";
 
 export default function Footer() {
@@ -77,10 +79,14 @@ export default function Footer() {
                 Get the latest information
               </h4>
               <div className="flex overflow-hidden border-2 border-gray-400 rounded-full bg-white">
+                <div className = "flex items-center pl-2">
+                <MdAttachEmail color="gray"/>
+                  
+                </div>
                 <input
                   type="email"
                   placeholder="Email Address" 
-                  className="w-full px-4 py-3 text-sm text-gray-800 outline-none "
+                  className="w-full px-2 py-3 text-sm text-gray-800 outline-none "
                 />
                 <button className="bg-orange-500 px-6 text-white cursor-pointer hover:bg-orange-700 transition">
                  <IoSendSharp />

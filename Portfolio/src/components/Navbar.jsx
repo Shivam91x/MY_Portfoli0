@@ -9,12 +9,12 @@ const navItems = [
   { label: "Service", path: "/service" },
   { label: "Resume", path: "/resume" },
   { label: "Project", path: "/projects" },
-  { label: "Contact", path: "/contact" },
+  { label: "Contact", path: "/contact" }, 
 ];
 
 export default function Navbar() {
   return (
-<header className="w-full flex justify-center pt-4 sticky top-2 z-50">
+<header className="w-full flex justify-center  sticky top-2  z-50">
   <nav
     className="
       w-[70%]
@@ -22,6 +22,7 @@ export default function Navbar() {
       gap-3
       rounded-full
       bg-black backdrop-blur-lg
+      border-2 border-gray-400
       px-6 py-2
       shadow-[0_12px_30px_rgba(0,0,0,0.35)]
     "
@@ -36,7 +37,7 @@ export default function Navbar() {
             `px-6 py-2.5 rounded-full text-sm md:text-base font-medium transition ${
             isActive
   ? "bg-orange-500 text-white  border-3 border-gray-200/70 shadow-2xl"
-  : "text-gray-300 hover:text-white hover:bg-white/10"
+  : "text-gray-300 hover:text-white hover:bg-white/20"
             }`
           }
         >
@@ -46,7 +47,7 @@ export default function Navbar() {
     </div>
 
     {/* Center Social */}
-    <div className="mx-4 flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm hover:bg-white/20 transition">
+    <div className="mx-4 flex items-center gap-3 rounded-full bg-white/10 px-2 py-1 backdrop-blur-sm hover:bg-white/20 transition">
       <a
         href="https://github.com/your-username"
         target="_blank"
@@ -88,7 +89,7 @@ export default function Navbar() {
             `px-6 py-2.5 rounded-full text-sm md:text-base font-medium transition ${
               isActive
               ? "bg-orange-500 text-white  border-3 border-gray-200/70 shadow-2xl"
-              : "text-gray-300 hover:text-white hover:bg-white/10"
+              : "text-gray-300 hover:text-white hover:bg-white/20"
             }`
           }
         >
