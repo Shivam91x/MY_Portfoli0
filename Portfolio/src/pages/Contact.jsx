@@ -1,106 +1,70 @@
-import React, { useState } from "react";
-import { FaEnvelope, FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa";
+import { useMemo, useState } from "react";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import SectionHeading from "../components/UI/SectionHeading";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const mailto = `mailto:shivam@email.com?subject=Contact from Portfolio&body=
-      Name: ${form.name}%0A
-      Email: ${form.email}%0A
-      Message: ${form.message}`;
-
-    window.location.href = mailto;
-    setSubmitted(true);
-    setForm({ name: "", email: "", message: "" });
-  };
+  const mailtoHref = useMemo(() => {
+    const subject = encodeURIComponent(`Portfolio inquiry from ${form.name || "Visitor"}`);
+    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`);
+    return `mailto:youremail@example.com?subject=${subject}&body=${body}`;
+  }, [form]);
 
   return (
-    <section className="min-h-screen bg-white px-4 py-16 sm:px-8">
-      <div className="mx-auto max-w-5xl">
-        {/* Hero */}
-        <div className="mb-12 text-center">
-          <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            Let’s Connect
-          </h1>
-          <p className="mt-3 text-gray-600">
-            Open to frontend roles, collaborations, and freelance work.
-          </p>
-        </div>
-    
-        {/* Contact Cards */}
-        <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { icon: <FaEnvelope  />, label: "Email", href: "mailto:shivam@email.com" },
-            { icon: <FaLinkedin />, label: "LinkedIn", href: "https://linkedin.com" },
-            { icon: <FaGithub />, label: "GitHub", href: "https://github.com" },
-            { icon: <FaWhatsapp />, label: "WhatsApp", href: "https://wa.me/91XXXXXXXXXX" },
-          ].map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-3 rounded-2xl border border-gray-200 p-4 transition hover:-translate-y-1 hover:shadow-md"
-            >
-              <span className="text-orange-500">{item.icon}</span>
-              <span className="font-medium text-gray-800">{item.label}</span>
-            </a>
-          ))}
+    <section className="py-12">
+      <SectionHeading
+        eyebrow="Contact"
+        title="Let’s work together"
+        description="I’m available for frontend roles and freelance projects. Send a quick message and I’ll reply soon."
+      />
+
+      <div className="grid gap-6 lg:grid-cols-3">
+        <div className="space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <a href="mailto:youremail@example.com" className="flex items-center gap-3 text-slate-700 hover:text-orange-500">
+            <FaEnvelope /> youremail@example.com
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-slate-700 hover:text-orange-500">
+            <FaLinkedin /> LinkedIn
+          </a>
+          <a href="https://github.com" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-slate-700 hover:text-orange-500">
+            <FaGithub /> GitHub
+          </a>
         </div>
 
-        {/* Form */}
-        <form
-          onSubmit={handleSubmit}
-          className="mx-auto max-w-2xl rounded-3xl border border-gray-200 bg-gray-50 p-6"
-        >
-          <h2 className="mb-4 text-lg font-semibold text-gray-900">
-            Send a Message
-          </h2>
-
+        <form className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-2">
           <div className="grid gap-4 sm:grid-cols-2">
             <input
+              required
+              value={form.name}
+              onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
               type="text"
               placeholder="Your Name"
-              value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="rounded-xl border px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-orange-400"
-              required
+              className="rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none focus:border-orange-400"
             />
             <input
+              required
+              value={form.email}
+              onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
               type="email"
               placeholder="Your Email"
-              value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="rounded-xl border px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-orange-400"
-              required
+              className="rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none focus:border-orange-400"
             />
           </div>
-
           <textarea
-            placeholder="Your Message"
-            rows={4}
-            value={form.message}
-            onChange={(e) => setForm({ ...form, message: e.target.value })}
-            className="mt-4 w-full rounded-xl border px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-orange-400"
             required
+            rows={5}
+            value={form.message}
+            onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
+            placeholder="Tell me about your project"
+            className="mt-4 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none focus:border-orange-400"
           />
-
-          <button
-            type="submit"
-            className="mt-4 inline-flex items-center justify-center rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-600"
+          <a
+            href={mailtoHref}
+            className="mt-4 inline-flex items-center rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white hover:bg-orange-600"
           >
-            Send Message
-          </button>
-
-          {submitted && (
-            <p className="mt-3 text-sm text-green-600">
-              Thanks! Your email client should open now.
-            </p>
-          )}
+            Send via Email
+          </a>
         </form>
       </div>
     </section>

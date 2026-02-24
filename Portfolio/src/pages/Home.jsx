@@ -1,88 +1,40 @@
-import React from "react";
-import { FaStar } from "react-icons/fa";
-import KeyboardMirror from "../components/KeyboardMirror ";
-import LaptopTypingDemo from "../components/KeyboardMirror ";
-import JSPlayground from "../components/KeyboardMirror ";
-import LaptopJSPlayground from "../components/KeyboardMirror ";
+import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <>
-    
-    
-
-    {/* <LaptopJSPlayground    />  */}
-    <section className="relative w-full overflow-hidden rounded-2xl bg-slate-50  ">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        {/* Top Hello */}
-        {/* <div className="flex justify-start pl-60 relative ">
-          <span className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium shadow-sm transition hover:bg-slate-100">
-            Hello <span className="text-orange-500 text-lg">👋</span>
-          </span>
-        </div> */}
-
-        {/* Headline */}
-        <div className="mt-3 text-center ">
-          <h1 className="text-xl font-extrabold leading-tight text-gray-900 sm:text-5xl lg:text-6xl">
-            I’m{" "}
-            <span className="text-orange-500">
-              Shivam<span className="text-gray-900">,</span>
-            </span>
-            <br className="hidden sm:block" />
-            Frontend Developer
-          </h1>
-          <p className="mt-2 text-sm sm:text-base text-gray-600 max-w-xl mx-auto">
-  I build responsive, component-driven UIs with React & Tailwind, focused on clean UX and performance.
-</p>
-        </div>
-
-        {/* Main Grid */}
-        <div className="relative mt-12 items-end ">
-          
-
-          {/* Center Image */}
-          <div className="relative flex h-[420px] items-end justify-center sm:h-[460px] lg:h-[560px]">
-            {/* Orange Half Circle */}
-            <div className="absolute bottom-58 h-[100px] w-[160px] rounded-t-full rounded-b-2xl bg-orange-200 sm:h-[300px] sm:w-[300px] lg:h-[180px] lg:w-[380px]" />
-            <img
-              src="demo.png"
-              alt="Profile"
-              className="relative z-10 bottom-58 h-[280px] sm:h-[320px] lg:h-[400px] object-contain drop-shadow-2xl"
-            />
-            {/* CTA Buttons */}
-            <div className="absolute bottom-44 z-50 flex gap-3 ">
-              <button
-                className="rounded-full cursor-pointer border-gray-400 bg-orange-500 px-4 py-3  text-md font-medium text-white shadow-lg transition 
-                          hover:bg-orange-600 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-orange-300"
-              >
-                Portfolio↗
-              </button>
-
-              <button
-                className="rounded-full cursor-pointer border border-gray-400 bg-white/60 px-5 py-2 text-sm font-medium text-gray-900 backdrop-blur transition
-                          hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-2 focus:ring-gray-00"
-              >
-                Hire me
-              </button>
-            </div>
-          </div>
-
-          {/* Right Experience
-          <div className="hidden justify-end lg:flex">
-            <div className="rounded-xl bg-white p-4 text-center shadow-md">
-              <div className="flex items-center justify-center gap-1 text-orange-500">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <FaStar key={i} size={14} />
-                ))}
-              </div>
-              <p className="mt-1 text-2xl font-bold text-gray-900">3+ Years</p>
-              <p className="text-xs text-gray-500">Experience</p>
-            </div>
-          </div> */}
+    <section className="grid items-center gap-10 py-12 md:grid-cols-2 md:py-20">
+      <div>
+        <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-orange-500">Frontend Developer</p>
+        <h1 className="text-4xl font-bold leading-tight sm:text-5xl">
+          Building clean, fast, and user-focused web experiences.
+        </h1>
+        <p className="mt-5 max-w-xl text-slate-600">
+          I design and develop modern React applications for job-ready products and freelance clients, with strong
+          attention to responsive UI/UX and performance.
+        </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link
+            to="/projects"
+            className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-orange-600"
+          >
+            View Projects <FaArrowRight className="text-xs" />
+          </Link>
+          <Link
+            to="/contact"
+            className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 hover:border-orange-400 hover:text-orange-500"
+          >
+            Hire Me
+          </Link>
         </div>
       </div>
+      <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+        <h2 className="text-2xl font-semibold">Short Intro</h2>
+        <p className="mt-4 text-slate-600">
+          I specialize in React.js + Tailwind CSS and enjoy turning ideas into polished interfaces. I focus on modular
+          components, scalable code, and delightful interactions that work on all devices.
+        </p>
+      </div>
     </section>
-    </>
-
   );
 }

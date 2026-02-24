@@ -1,35 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: "gilroy", system-ui, sans-serif;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-  font-family: var(--font-body);
+  margin: 0;
+  min-width: 320px;
 }
 
-
-/*  Custom Cursor Css  */
-
-/* hide default cursor */
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 14px;
-  height: 12px;
-  border-radius: 9999px;
-  background: #f97316; /* orange-500 */
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  box-shadow: 0 0 42px rgba(249, 115, 22, 0.6);
-  transition: transform 1s linear; /* subtle delay */
-}
-
-
-a:hover ~ .custom-cursor,
-button:hover ~ .custom-cursor {
-  transform: translate(-50%, -50%) scale(2);
+a {
+  text-decoration: none;
 }
