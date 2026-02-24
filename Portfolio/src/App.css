@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+.rpv-core__toolbar button {
+  color: #f97316; /* orange-500 */
+}
+.rpv-core__toolbar {
+  background: #fff7ed; /* orange-50 */
+}
