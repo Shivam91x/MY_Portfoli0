@@ -1,73 +1,146 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
+import {
+  FaCode,
+  FaPaintBrush,
+  FaRocket,
+  FaTools,
+  FaServer,
+  FaHandshake,
+} from "react-icons/fa";
 
-const services = [
+const jobServices = [
   {
-    title: "UI / UX Design",
-    image: "/service-uiux.png", // replace with your images
+    icon: <FaCode size={22} />,
+    title: "Frontend Development",
+    desc: "Scalable, maintainable UIs with React, Tailwind and modern patterns.",
+    tags: ["React", "Tailwind", "SPA"],
   },
   {
-    title: "Web Design",
-    image: "/service-web.png",
+    icon: <FaTools size={22} />,
+    title: "Admin Dashboards",
+    desc: "Enterprise dashboards with role-based access, tables and workflows.",
+    tags: ["RBAC", "Tables", "Forms"],
   },
   {
-    title: "Landing Page",
-    image: "/service-landing.png",
+    icon: <FaRocket size={22} />,
+    title: "Performance Optimization",
+    desc: "Improve load time, code splitting and runtime performance.",
+    tags: ["Vite", "Lazy Load", "Perf"],
   },
 ];
 
-export default function MyServices() {
+const freelanceServices = [
+  {
+    icon: <FaPaintBrush size={22} />,
+    title: "Website Development",
+    desc: "Responsive websites for startups, brands and small businesses.",
+    tags: ["Landing Page", "Responsive"],
+  },
+  {
+    icon: <FaHandshake size={22} />,
+    title: "Frontend Fixes & Enhancements",
+    desc: "Bug fixes, UI polish and feature additions in existing projects.",
+    tags: ["Bug Fix", "UI Polish"],
+  },
+  {
+    icon: <FaServer size={22} />,
+    title: "API Integration",
+    desc: "REST APIs, auth flows and dashboard integrations.",
+    tags: ["REST", "Auth", "Dashboards"],
+  },
+];
+
+function GlassCard({ icon, title, desc, tags }) {
   return (
-    <section className="relative overflow-hidden rounded-3xl bg-[#0b0b0f] px-6 py-16 sm:px-10">
+    <div className="group relative overflow-hidden rounded-4xl border border-white/30 bg-white/50 p-6 shadow-xl backdrop-blur-md transition hover:-translate-y-1 hover:shadow-orange-300/40">
+      {/* Glow */}
+      <div className="pointer-events-none absolute -inset-1 rounded-2xl bg-gradient-to-r from-orange-400/0 via-orange-400/40 to-orange-400/0 opacity-0 blur transition group-hover:opacity-100" />
 
+      <div className="relative z-10">
+        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100/80 text-orange-600">
+          {icon}
+        </div>
 
-      {/* Background blobs */}
-      <div className="pointer-events-none absolute -left-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-orange-500/40 blur-[120px]" />
-      <div className="pointer-events-none absolute -right-24 top-1/3 h-72 w-72 rounded-full bg-orange-400/30 blur-[120px]" />
+        <h3 className="mb-2 text-lg font-semibold text-gray-900">
+          {title}
+        </h3>
 
-      {/* Header */}
-      <div className="relative z-10 mb-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <h2 className="text-3xl font-bold text-white sm:text-4xl">
-          20 <span className="text-orange-500">lorem</span>
-        </h2>
-        <p className="max-w-xl text-sm text-gray-400">
-          I design and build high-quality web interfaces with strong focus on UX,
-          performance, and scalability.
+        <p className="mb-3 text-sm text-gray-700 leading-relaxed">
+          {desc}
         </p>
+
+        <div className="flex flex-wrap gap-2">
+          {tags.map((t) => (
+            <span
+              key={t}
+              className="rounded-full border border-orange-200/70 bg-orange-50/80 px-2.5 py-0.5 text-xs text-orange-700"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
       </div>
+    </div>
+  );
+}
 
-      {/* Cards */}
-      <div className="relative z-10 flex gap-6 overflow-x-auto pb-10">
-        {services.map((service) => (
-          <div
-            key={service.title}
-            className="relative w-[280px] shrink-0 rounded-3xl border border-white/20 bg-white/10 p-5 backdrop-blur-xl"
-          >
-            <h3 className="mb-4 text-lg font-semibold text-white">
-              {service.title}
-            </h3>
+export default function Services() {
+  return (
+    <section
+      className="relative mb-4 min-h-screen bg-cover px-4 py-16 sm:px-8 lg:px-12"
+      // 👇 Tum yahan apni background image laga dena
+      style={{ backgroundImage: "url('/ServiceBg.png')" }}
+    >
+      {/* Overlay for readability */}
+      <div className="absolute rounded-4xl rounded-br-full inset-0 bg-black/40" />
 
-            <div className="overflow-hidden rounded-2xl bg-white">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="h-40 w-full object-cover"
-              />
+      <div className="relative z-10 mx-auto max-w-7xl">
+        {/* Header */}
+        <div className="mb-14 text-center text-black">
+          <h1 className="text-3xl font-bold">
+            Services
+          </h1>
+          <p className="mt-2 text-sm text-black/80">
+            Frontend · Freelancing · API Integration
+          </p>
+        </div>
+
+        {/* Split Sections */}
+        <div className="grid gap-14 lg:grid-cols-2">
+          {/* For Companies */}
+          <div>
+            <h2 className="mb-5 text-xl font-semibold text-gray/90">
+              For Companies (Jobs)
+            </h2>
+            <div className="grid gap-5 sm:grid-cols-2">
+              {jobServices.map((s) => (
+                <GlassCard key={s.title} {...s} />
+              ))}
             </div>
-
-            {/* Floating arrow button */}
-            <button className="absolute -bottom-5 right-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#0f172a] text-white shadow-lg transition hover:scale-110 hover:bg-orange-500">
-              <FaArrowRight  />
-            </button>
           </div>
-        ))}
-      </div>
 
-      {/* Pagination dots (UI only) */}
-      <div className="relative z-10 mt-6 flex items-center justify-center gap-2">
-        <span className="h-2 w-6 rounded-full bg-orange-500"></span>
-        <span className="h-2 w-2 rounded-full bg-gray-600"></span>
-        <span className="h-2 w-2 rounded-full bg-gray-600"></span>
+          {/* For Freelancing */}
+          <div>
+            <h2 className="mb-5 text-xl font-semibold text-black">
+              For Clients (Freelancing)
+            </h2>
+            <div className="grid gap-5 sm:grid-cols-2">
+              {freelanceServices.map((s) => (
+                <GlassCard key={s.title} {...s} />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="mt-16 text-center">
+          <a
+            href="/contact"
+            className="inline-flex items-center rounded-full bg-orange-500 px-7 py-2.5 text-sm font-medium text-white shadow-lg transition hover:bg-orange-600"
+          >
+            Let’s Build Something
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import { useLocation, useNavigate } from "react-router-dom";
+import CustomCursor from "../UI/CustomCursor"
 
 
 export default function MainLayout() {
@@ -28,6 +29,7 @@ export default function MainLayout() {
 
   return (
     <>
+    <CustomCursor />
       <Navbar />
       <main className="pt-1 px-6">
         <Outlet />
