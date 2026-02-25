@@ -49,7 +49,7 @@ export default function Navbar() {
     {/* Center Social */}
     <div className="mx-4 flex items-center gap-3 rounded-full bg-white/10 px-2 py-1 backdrop-blur-sm hover:bg-white/20 transition">
       <a
-        href="https://github.com/your-username"
+        href="https://github.com/Shivam91x"
         target="_blank"
         rel="noreferrer"
         className="flex h-9 w-9 items-center justify-center rounded-full hover:bg-white/10 transition"
@@ -59,7 +59,7 @@ export default function Navbar() {
       </a>
 
       <a
-        href="https://linkedin.com/in/your-username"
+        href="https://www.linkedin.com/in/shivam-yadav0001/"
         target="_blank"
         rel="noreferrer"
         className="flex h-9 w-9 items-center justify-center rounded-full hover:bg-white/10 transition"
@@ -69,7 +69,7 @@ export default function Navbar() {
       </a>
 
       <a
-        href="https://wa.me/91XXXXXXXXXX"
+        href="https://wa.me/919691214330"
         target="_blank"
         rel="noreferrer"
         className="flex h-9 w-9 items-center justify-center rounded-full hover:bg-white/10 transition"

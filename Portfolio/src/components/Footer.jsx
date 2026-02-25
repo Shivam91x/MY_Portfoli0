@@ -80,7 +80,7 @@ export default function Footer() {
               </h4>
               <div className="flex overflow-hidden border-2 border-gray-400 rounded-full bg-white">
                 <div className = "flex items-center pl-2">
-                <MdAttachEmail color="gray"/>
+                <MdAttachEmail color="orange"/>
                   
                 </div>
                 <input
@@ -88,7 +88,7 @@ export default function Footer() {
                   placeholder="Email Address" 
                   className="w-full px-2 py-3 text-sm text-gray-800 outline-none "
                 />
-                <button className="bg-orange-500 px-6 text-white cursor-pointer hover:bg-orange-700 transition">
+                <button className="bg-orange-500 px-4 text-white cursor-pointer hover:bg-orange-700 transition">
                  <IoSendSharp />
 
                 </button>
