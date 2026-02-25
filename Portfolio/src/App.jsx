@@ -8,10 +8,13 @@ import Contact from "./pages/Contact";
 import Resume from './pages/Resume'
 import Services from "./pages/Services";
 import React from 'react'
+import PageLoader from "./components/ProgressLoader";
+import AboutCheck from "./pages/AboutCheck";
 
 export default function App() {
   return (
     <BrowserRouter>
+    <PageLoader />
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
@@ -21,6 +24,7 @@ export default function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/aboutcheck" element={<AboutCheck />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -31,9 +31,9 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 font-bold">
-                  JC
+                  SY
                 </div>
-                <span className="text-lg font-semibold">JCREA</span>
+                <span className="text-lg font-semibold">Shivam Yadav</span>
               </div>
               <p className="max-w-sm text-sm text-gray-300  antialiased ">
                 Building modern, scalable and user-friendly web experiences with
@@ -67,18 +67,18 @@ export default function Footer() {
                 Contact
               </h4>
               <ul className="space-y-2 text-sm text-gray-300">
-                <li>+91 7738443636</li>
-                <li>jaycrea36@gmail.com</li>
-                <li>portfolio-jcrea.com</li>
+                <li>+91 9691214330</li>
+                <li>shivamyadav35314@gmail.com</li>
+                <li>portfolio</li>
               </ul>
-            </div>
+            </div>  
 
             {/* Newsletter */}
             <div>
               <h4 className="mb-4 text-md font-semibold text-orange-400">
                 Get the latest information
               </h4>
-              <div className="flex overflow-hidden border-2 border-gray-400 rounded-full bg-white">
+              <div className="flex overflow-hidden rounded-4xl bg-white">
                 <div className = "flex items-center pl-2">
                 <MdAttachEmail color="orange"/>
                   

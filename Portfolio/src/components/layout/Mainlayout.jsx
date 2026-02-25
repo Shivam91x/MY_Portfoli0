@@ -30,11 +30,11 @@ export default function MainLayout() {
   return (
     <>
     {/* <CustomCursor /> */}
-      <Navbar />
+      {/* <Navbar /> */}
       <main className="pt-1 px-6">
         <Outlet />
       </main>
-      <Footer ></Footer>
+      {/* <Footer ></Footer> */}
     </>
   );
 }

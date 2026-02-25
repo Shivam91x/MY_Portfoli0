@@ -9,6 +9,10 @@ body {
   font-family: var(--font-body);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 
 /*  Custom Cursor Css  */
 
@@ -32,4 +36,70 @@ body {
 a:hover ~ .custom-cursor,
 button:hover ~ .custom-cursor {
   transform: translate(-50%, -50%) scale(2);
+}
+
+
+
+/* Custom ScrollerBar for All Browsers */
+/* Custom Orange Scrollbar */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff7ed; /* orange-50 */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #fb923c, #f97316); /* orange-400 -> orange-500 */
+  border-radius: 10px;
+  border: 2px solid #fff7ed;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f97316, #ea580c); /* darker on hover */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #f97316 #fff7ed; /* thumb track */
+}
+
+
+
+
+
+/* Custom Progress Bar */
+/* Orange Progress Bar */
+#nprogress .bar {
+  background: linear-gradient(90deg, #fb923c, #f97316, #ea580c) !important;
+  height: 3px !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #f97316, 0 0 5px #fb923c !important;
+}
+
+#nprogress .spinner {
+  display: none !important;
+}
+
+
+
+/* Animated Keyboard button */
+/* src/index.css */
+.key polygon {
+  fill: #fecaca; /* default */
+  transition: all 0.12s ease;
+}
+
+.key.active polygon {
+  fill: #fb923c; /* orange */
+  transform: scale(1.08);
+  transform-origin: center;
+  filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.8));
 }
