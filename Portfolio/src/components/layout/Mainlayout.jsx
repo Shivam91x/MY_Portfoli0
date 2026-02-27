@@ -4,8 +4,7 @@ import React, { useEffect } from "react";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import { useLocation, useNavigate } from "react-router-dom";
-import CustomCursor from "../UI/CustomCursor"
-
+import CustomCursor from "../UI/CustomCursor";
 
 export default function MainLayout() {
   const location = useLocation();
@@ -25,16 +24,14 @@ export default function MainLayout() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  
-
   return (
     <>
-    {/* <CustomCursor /> */}
+      <CustomCursor />
       <Navbar />
       <main className="pt-1 px-6">
         <Outlet />
       </main>
-      <Footer ></Footer>
+      <Footer></Footer>
     </>
   );
 }

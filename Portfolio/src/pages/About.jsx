@@ -1,5 +1,11 @@
 import React from "react";
-import { FaCss3Alt, FaGitAlt, FaHtml5, FaJsSquare, FaReact } from "react-icons/fa";
+import {
+  FaCss3Alt,
+  FaGitAlt,
+  FaHtml5,
+  FaJsSquare,
+  FaReact,
+} from "react-icons/fa";
 import { SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
 
 export default function WhyHireMe() {
@@ -20,23 +26,22 @@ export default function WhyHireMe() {
         <div className="grid grid-cols-1 items-center gap-8 rounded-2xl px-4 py-10 sm:px-8 md:grid-cols-2 md:px-10 md:py-14">
           {/* Left: Image */}
           <div className="relative flex justify-center md:pr-8">
-<div className="relative group flex justify-center md:pr-8">
-  <div className="relative flex justify-center">
+            <div className="relative group flex justify-center md:pr-8">
+              <div className="relative flex justify-center">
+                {/* Sliding Accent Layer */}
+                <div className="absolute top-16 left-10 h-[280px] w-[240px] rounded-3xl bg-orange-200 transition-all duration-500 ease-out group-hover:translate-x-6 group-hover:translate-y-2"></div>
 
-    {/* Sliding Accent Layer */}
-    <div className="absolute top-16 left-10 h-[280px] w-[240px] rounded-3xl bg-orange-200 transition-all duration-500 ease-out group-hover:translate-x-6 group-hover:translate-y-2"></div>
+                {/* Base Layer */}
+                <div className="absolute top-20 left-14 h-[280px] w-[240px] rounded-3xl border border-orange-300 transition-all duration-500 group-hover:-translate-x-2 group-hover:-translate-y-2"></div>
 
-    {/* Base Layer */}
-    <div className="absolute top-20 left-14 h-[280px] w-[240px] rounded-3xl border border-orange-300 transition-all duration-500 group-hover:-translate-x-2 group-hover:-translate-y-2"></div>
-
-    {/* Image */}
-    <img
-      src="/demo.png"
-      alt="Why hire me"
-      className="relative z-10 h-[410px] w-[300px] max-w-full rounded-2xl object-cover transition-all duration-500 group-hover:-translate-y-3"
-    />
-  </div>
-</div>
+                {/* Image */}
+                <img
+                  src="/demo.png"
+                  alt="Why hire me"
+                  className="relative z-10 h-[410px] w-[300px] max-w-full rounded-2xl object-cover transition-all duration-500 group-hover:-translate-y-3"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Right: Content */}
