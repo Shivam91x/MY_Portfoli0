@@ -28,7 +28,7 @@ export default function MainLayout() {
     <>
       <CustomCursor />
       <Navbar />
-      <main className="pt-1 px-6">
+      <main >
         <Outlet />
       </main>
       <Footer></Footer>

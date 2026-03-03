@@ -8,7 +8,7 @@ export default function CustomCursor() {
 
   useEffect(() => {
     const cursor = cursorRef.current;
-    const SMOOTHING = 0.08; // 👈 increase/decrease delay here
+    const SMOOTHING = 0.05; // 👈 increase/decrease delay here
 
     const move = (e) => {
       mouseX = e.clientX;

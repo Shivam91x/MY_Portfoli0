@@ -3,9 +3,12 @@ import KeyboardSVG from '../components/KeyboardSVG'
 
 function AboutCheck() {
   return (
-    // <KeyboardSVG />
+    <>
+    <KeyboardSVG />
     <h5>hello</h5>
-  )
+    
+    </>
+  ) 
 }
 
 export default AboutCheck

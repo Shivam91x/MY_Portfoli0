@@ -109,10 +109,10 @@ export default function Services() {
         <div className="grid gap-14 lg:grid-cols-2">
           {/* For Companies */}
           <div>
-            <h2 className="mb-5 text-xl font-semibold text-gray/90">
-              For Companies (Jobs)
+            <h2 className="mb-5 text-xl font-semibold text-gray/90 border-b  pl-4  border-gray-300">
+             I Do
             </h2>
-            <div className="grid gap-5 sm:grid-cols-2">
+             <div className="grid gap-5 sm:grid-cols-2">
               {jobServices.map((s) => (
                 <GlassCard key={s.title} {...s} />
               ))}
@@ -122,7 +122,7 @@ export default function Services() {
           {/* For Freelancing */}
           <div>
             <h2 className="mb-5 text-xl font-semibold text-black">
-              For Clients (Freelancing)
+              .
             </h2>
             <div className="grid gap-5 sm:grid-cols-2">
               {freelanceServices.map((s) => (

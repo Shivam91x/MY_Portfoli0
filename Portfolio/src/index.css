@@ -21,8 +21,8 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  width: 14px;
-  height: 12px;
+  width: 10px;
+  height: 8px;
   border-radius: 9999px;
   background: #f97316; /* orange-500 */
   pointer-events: none;

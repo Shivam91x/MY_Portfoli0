@@ -1,5 +1,5 @@
 import React from "react";
-import { FaStar } from "react-icons/fa";
+import { FaArrowRight, FaStar } from "react-icons/fa";
 import KeyboardMirror from "../components/KeyboardMirror ";
 import LaptopTypingDemo from "../components/KeyboardMirror ";
 import JSPlayground from "../components/KeyboardMirror ";
@@ -39,19 +39,20 @@ export default function Home() {
             {/* Center Image */}
             <div className="relative flex h-[420px] items-end justify-center sm:h-[460px] lg:h-[560px]">
               {/* Orange Half Circle */}
-              <div className="absolute bottom-58 h-[100px] w-[160px] rounded-t-full rounded-b-2xl bg-orange-200 sm:h-[300px] sm:w-[300px] lg:h-[180px] lg:w-[380px]" />
+              <div className="absolute bottom-58 h-[100px] w-[160px] rounded-t-full rounded-b-2xl shadow-2xl bg-orange-200 sm:h-[300px] sm:w-[300px] lg:h-[180px] lg:w-[380px]" />
               <img
                 src="demo.png"
                 alt="Profile"
                 className="relative z-10 bottom-58 h-[280px] sm:h-[320px] lg:h-[400px] object-contain drop-shadow-2xl"
               />
               {/* CTA Buttons */}
-              <div className="absolute bottom-44 z-50 flex gap-3 ">
+              <div className="absolute bottom-42 z-50 flex gap-3 ">
                 <button
-                  className="rounded-full cursor-pointer border-gray-400 bg-orange-500 px-4 py-3  text-md font-medium text-white shadow-lg transition 
-                          hover:bg-orange-600 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-orange-300"
+                  className="group inline-flex items-center gap-2 rounded-3xl border border-gray-400 px-6 py-3 font-medium text-black transition-all duration-300 hover:bg-orange-600 hover:text-white hover:shadow-lg"
                 >
-                  Portfolio↗
+                  Portfolio
+                  <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-2" />
+                  
                 </button>
 
                 <button
