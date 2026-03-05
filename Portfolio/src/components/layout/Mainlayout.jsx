@@ -5,6 +5,7 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import { useLocation, useNavigate } from "react-router-dom";
 import CustomCursor from "../UI/CustomCursor";
+import Layout from "./Layout";
 
 export default function MainLayout() {
   const location = useLocation();
@@ -26,12 +27,14 @@ export default function MainLayout() {
 
   return (
     <>
+    <Layout>
       <CustomCursor />
       <Navbar />
       <main >
         <Outlet />
       </main>
-      <Footer></Footer>
+      <Footer />
+      </Layout>
     </>
   );
 }

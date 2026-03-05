@@ -9,7 +9,8 @@ export default function Home() {
   return (
     <>
       {/* <LaptopJSPlayground    />  */}
-      <section className="relative w-full overflow-hidden rounded-2xl bg-slate-50  ">
+      <section className="relative w-full overflow-hidden rounded-2xl ">
+        <div className="bg-orange-200 rounded-full blur-[120px] opacity-40  "></div>
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           {/* Top Hello */}
           {/* <div className="flex justify-start pl-60 relative ">
@@ -65,7 +66,7 @@ export default function Home() {
             </div>
 
             {/* Right Experience
-          <div className="hidden justify-end lg:flex">
+          <div className="hidden justify-end  lg:flex">
             <div className="rounded-xl bg-white p-4 text-center shadow-md">
               <div className="flex items-center justify-center gap-1 text-orange-500">
                 {Array.from({ length: 5 }).map((_, i) => (

@@ -52,7 +52,9 @@ const freelanceServices = [
 
 function GlassCard({ icon, title, desc, tags }) {
   return (
-    <div className="group relative overflow-hidden rounded-4xl border border-white/30 bg-white/50 p-6 shadow-xl backdrop-blur-md transition hover:-translate-y-1 hover:shadow-orange-300/40">
+    <div className="group relative overflow-hidden rounded-4xl border border-white/3  p-6 shadow-xl backdrop-blur-md transition hover:-translate-y-1 hover:shadow-orange-300/40">
+        <div className="bg-orange-200 rounded-full blur-[120px] opacity-40  "></div>
+
       {/* Glow */}
       <div className="pointer-events-none absolute -inset-1 rounded-2xl bg-gradient-to-r from-orange-400/0 via-orange-400/40 to-orange-400/0 opacity-0 blur transition group-hover:opacity-100" />
 

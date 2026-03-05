@@ -103,3 +103,39 @@ button:hover ~ .custom-cursor {
   transform-origin: center;
   filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.8));
 }
+
+
+
+/* Resume page background  */
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 40px 40px, 40px 40px;
+  }
+}
+
+.animate-grid {
+  animation: gridMove 20s linear infinite;
+}
+
+
+
+
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}

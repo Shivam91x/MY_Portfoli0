@@ -23,7 +23,9 @@ export default function WhyHireMe() {
   ];
 
   return (
-    <section className="mb-10 w-full rounded-4xl bg-slate-50">
+    <section className="mb-10 w-full rounded-4xl  ">
+        <div className="bg-orange-200 rounded-full blur-[120px] opacity-40  "></div>
+
       <div className="relative rounded-3xl p-4 md:p-10">
         <div className="grid grid-cols-1 items-center gap-8 rounded-2xl px-4 py-10 sm:px-8 md:grid-cols-2 md:px-10 md:py-14">
           {/* Left: Image */}

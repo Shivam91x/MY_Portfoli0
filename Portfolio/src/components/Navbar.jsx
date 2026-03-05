@@ -16,17 +16,17 @@ export default function Navbar() {
   return (
 <header className="w-full flex justify-center  sticky top-2  z-50">
   <nav
-    className="
-      w-[70%]
-      flex items-center justify-between
-      gap-3
-      rounded-full
-      bg-black backdrop-blur-lg
-      border-2 border-gray-400
-      px-6 py-2
-      shadow-[0_12px_30px_rgba(0,0,0,0.35)]
-    "
-  >
+  className="
+  w-[70%]
+  flex items-center justify-between
+  gap-3
+  rounded-full
+  bg-black/70 backdrop-blur-lg
+  border-2 border-gray-400/30
+  px-6 py-2
+  shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+"
+>
     {/* Left Links */}
     <div className="flex items-center gap-2">
       {navItems.slice(0, 3).map((item) => (

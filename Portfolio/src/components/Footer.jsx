@@ -1,10 +1,16 @@
-import { FaGithub, FaLinkedinIn, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { FaArrowRight, FaGithub, FaLinkedinIn, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import { IoSendSharp } from "react-icons/io5";
 import { MdAttachEmail } from "react-icons/md";
 
 import React from "react";
 
 export default function Footer() {
+
+
+
+  const handleOnChange = () => {
+    
+  }
   return (
     <footer className="w-full rounded-t-4xl bg-[#1f1f1f]">
       {/* Outer full-width background */}
@@ -16,9 +22,9 @@ export default function Footer() {
             <h2 className="text-3xl font-bold sm:text-4xl">
               Let’s Connect there
             </h2>
-            <button className="flex items-center border-2 border-slate-400 cursor-pointer gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white hover:bg-orange-700 transition">
+            <button className="group inline-flex items-center gap-2 rounded-3xl border border-gray-400 px-6 py-3 font-medium bg-orange-50 cursor-pointer text-black transition-all duration-300 hover:bg-orange-600 hover:text-white hover:shadow-lg">
               Hire me
-              <span>↗</span>
+              <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-2" />
             </button>
           </div>
 
@@ -40,10 +46,22 @@ export default function Footer() {
                 React and modern UI systems.
               </p>
               <div className="flex gap-3 text-gray-300">
-                <FaWhatsapp   size={22} className="cursor-pointer hover:text-green-400 hover:scale-120 transition-all  dureation-900 " />
-                <FaGithub  size={20} className="cursor-pointer  hover:text-white hover:scale-120 transition-all  dureation-900" />
-                <FaLinkedinIn  size={20}className="cursor-pointer  hover:text-blue-400 hover:scale-120 transition-all  dureation-900" />
-                <FaTwitter size={20} className="cursor-pointer  hover:text-blue-400 hover:scale-120 transition-all  dureation-900" />
+                <FaWhatsapp
+                  size={22}
+                  className="cursor-pointer hover:text-green-400 hover:scale-120 transition-all  dureation-900 "
+                />
+                <FaGithub
+                  size={20}
+                  className="cursor-pointer  hover:text-white hover:scale-120 transition-all  dureation-900"
+                />
+                <FaLinkedinIn
+                  size={20}
+                  className="cursor-pointer  hover:text-blue-400 hover:scale-120 transition-all  dureation-900"
+                />
+                <FaTwitter
+                  size={20}
+                  className="cursor-pointer  hover:text-blue-400 hover:scale-120 transition-all  dureation-900"
+                />
               </div>
             </div>
 
@@ -53,7 +71,9 @@ export default function Footer() {
                 Navigation
               </h4>
               <ul className="space-y-2 text-sm text-gray-300">
-                <li className="hover:text-white cursor-pointer" href = "/">Home</li>
+                <li className="hover:text-white cursor-pointer" href="/">
+                  Home
+                </li>
                 <li className="hover:text-white cursor-pointer">About Us</li>
                 <li className="hover:text-white cursor-pointer">Service</li>
                 <li className="hover:text-white cursor-pointer">Resume</li>
@@ -71,7 +91,7 @@ export default function Footer() {
                 <li>shivamyadav35314@gmail.com</li>
                 <li>portfolio</li>
               </ul>
-            </div>  
+            </div>
 
             {/* Newsletter */}
             <div>
@@ -79,18 +99,17 @@ export default function Footer() {
                 Get the latest information
               </h4>
               <div className="flex overflow-hidden rounded-4xl bg-white">
-                <div className = "flex items-center pl-2">
-                <MdAttachEmail color="orange"/>
-                  
+                <div className="flex items-center px-3  text-gray-400 py-3">
+                  <MdAttachEmail color="orange" />
                 </div>
                 <input
                   type="email"
-                  placeholder="Email Address" 
+                  placeholder="Email Address"
                   className="w-full px-2 py-3 text-sm text-gray-800 outline-none "
+                  onChange={handleOnChange}
                 />
                 <button className="bg-orange-500 px-4 text-white cursor-pointer hover:bg-orange-700 transition">
-                 <IoSendSharp />
-
+                  <IoSendSharp />
                 </button>
               </div>
             </div>
@@ -103,7 +122,8 @@ export default function Footer() {
           <div className="flex flex-col items-center justify-between gap-4 text-sm text-gray-400 sm:flex-row">
             <p>© {new Date().getFullYear()} .Shivam All Rights Reserved.</p>
             <p>
-              User Terms & Conditions <span className="mx-2">|</span> Privacy Policy
+              User Terms & Conditions <span className="mx-2">|</span> Privacy
+              Policy
             </p>
           </div>
         </div>
