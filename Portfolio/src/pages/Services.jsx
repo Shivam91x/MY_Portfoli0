@@ -89,7 +89,7 @@ function GlassCard({ icon, title, desc, tags }) {
 export default function Services() {
   return (
     <section
-      className="relative mb-4 min-h-screen bg-cover px-4 py-16 sm:px-8 lg:px-12"
+      className="relative mb-4 min-h-screen bg-contain  px-4 py-16 sm:px-8 lg:px-12"
       // 👇 Tum yahan apni background image laga dena
       style={{ backgroundImage: "url('/ServiceBg.png')" }}
     >

@@ -49,7 +49,7 @@ export default function Home() {
               {/* CTA Buttons */}
               <div className="absolute bottom-42 z-50 flex gap-3 ">
                 <button
-                  className="group inline-flex items-center gap-2 rounded-3xl border border-gray-400 px-6 py-3 font-medium text-black transition-all duration-300 hover:bg-orange-600 hover:text-white hover:shadow-lg"
+                  className="group inline-flex items-center gap-2 rounded-3xl border border-gray-400 px-6 py-3 font-medium text-black shadow-2xl transition-all duration-300 bg-slate-100 cursor-pointer  hover:bg-orange-600 hover:text-white hover:shadow-lg"
                 >
                   Portfolio
                   <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-2" />

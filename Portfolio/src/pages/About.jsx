@@ -6,6 +6,7 @@ import {
   FaHtml5,
   FaJsSquare,
   FaReact,
+  FaUser
 } from "react-icons/fa";
 import { SiMui, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
 
@@ -51,8 +52,8 @@ export default function WhyHireMe() {
 
           {/* Right: Content */}
           <div className="space-y-5">
-            <h2 className="text-4xl font-semibold text-gray-900">
-              Why <span className="text-orange-500">Hire me?</span>
+            <h2 className="text-4xl flex gap-2 font-semibold text-gray-900">
+             <FaUser  size={30} className="mt-1" /> About me  
             </h2>
 
             <p className="max-w-xl text-gray-500">
@@ -104,7 +105,7 @@ export default function WhyHireMe() {
             <div className="pt-4">
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-2 rounded-3xl border border-gray-300 px-6 py-3 font-medium text-black transition-all duration-300 hover:bg-orange-600 hover:text-white hover:shadow-lg"
+                className="group inline-flex items-center gap-2 rounded-3xl border bg-slate-100 shadow-sm border-gray-300 px-6 py-3 font-medium text-black transition-all duration-300 hover:bg-orange-600 hover:text-white hover:shadow-lg"
               >
                 Hire Me
                 <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-2" />
