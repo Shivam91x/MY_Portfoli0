@@ -27,7 +27,7 @@ export default function WhyHireMe() {
     <section className="mb-10 w-full rounded-4xl  ">
         <div className="bg-orange-200 rounded-full blur-[120px] opacity-40  "></div>
 
-      <div className="relative rounded-3xl p-4 md:p-10">
+      <div className="relative rounded-3xl p-4 md:p- mb-10">
         <div className="grid grid-cols-1 items-center gap-8 rounded-2xl px-4 py-10 sm:px-8 md:grid-cols-2 md:px-10 md:py-14">
           {/* Left: Image */}
           <div className="relative flex justify-center md:pr-8">
@@ -85,6 +85,27 @@ export default function WhyHireMe() {
                 ))}
               </ul>
             </div>
+            {/* Currently Learning */}
+              <div className="mt-6">
+                {/* <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-700">
+                  Currently Learning
+                </h3> */}
+
+                <div className="flex flex-wrap gap-3">
+                  <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">
+                    Redux Toolkit
+                  </span>
+                  <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">
+                    Advanced React Patterns
+                  </span>
+                  <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">
+                    Performance Optimization
+                  </span>
+                </div>
+              </div>
+
+            {/* Stats */}
+            <div className="mt-2 grid grid-cols-2 gap-6 sm:grid-cols-3"></div>
 
             {/* Stats */}
             <div className="mt-2 grid grid-cols-2 gap-6 sm:grid-cols-3">
