@@ -10,10 +10,12 @@ import Resume from "./pages/Resume";
 import Services from "./pages/Services";
 import PageLoader from "./components/ProgressLoader";
 import AboutCheck from "./pages/AboutCheck";
+import LoadingScreen from "./components/UI/LoadingScreen";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <LoadingScreen />
       <PageLoader />
       <Routes>
         <Route element={<MainLayout />}>
