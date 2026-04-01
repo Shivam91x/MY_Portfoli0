@@ -7,6 +7,7 @@ import {
   FaServer,
   FaHandshake,
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const jobServices = [
   {
@@ -51,6 +52,8 @@ const freelanceServices = [
 ];
 
 function GlassCard({ icon, title, desc, tags }) {
+
+  const navigate = useNavigate();
   return (
     <div className="group relative overflow-hidden rounded-2xl sm:rounded-4xl border border-white/3 p-4 sm:p-6 shadow-xl backdrop-blur-md transition hover:-translate-y-1 hover:shadow-orange-300/40">
         <div className="bg-orange-200 rounded-full blur-[120px] opacity-40"></div>
@@ -135,12 +138,12 @@ export default function Services() {
 
         {/* CTA */}
         <div className="mt-10 sm:mt-14 md:mt-16 text-center">
-          <a
-            href="/contact"
-            className="inline-flex items-center rounded-full bg-orange-500 px-5 sm:px-7 py-2 sm:py-2.5 text-xs sm:text-sm font-medium text-white shadow-lg transition hover:bg-orange-600"
+          <button
+            onClick={() => navigate("/contact")}
+            className="inline-flex items-center cursor-pointer rounded-full bg-orange-500 px-5 sm:px-7 py-2 sm:py-2.5 text-xs sm:text-sm font-medium text-white shadow-lg transition hover:bg-orange-600"
           >
             Let’s Build Something
-          </a>
+          </button>
         </div>
       </div>
     </section>

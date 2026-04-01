@@ -42,7 +42,7 @@ export default function Home() {
               <div className="relative flex h-[420px] items-end justify-center sm:h-[460px] lg:h-[500px] w-full">
                 <div className="absolute bottom-30 h-[100px] w-[160px] rounded-t-full rounded-b-2xl shadow-2xl bg-orange-200 sm:h-[300px] sm:w-[300px] lg:h-[180px] lg:w-[380px]" />
                 <img
-                  src="demo.png"
+                  src="HomeImg.png"
                   alt="Profile"
                   className="relative z-10 bottom-30 h-[280px] sm:h-[320px] lg:h-[400px] object-contain drop-shadow-2xl"
                 />

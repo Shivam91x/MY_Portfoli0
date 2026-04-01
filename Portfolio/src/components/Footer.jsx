@@ -1,31 +1,63 @@
 import { IoSendSharp } from "react-icons/io5";
 import { MdAttachEmail } from "react-icons/md";
 import { FaArrowRight, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 const socials = [
-  { name: "GitHub",   icon: <FaGithub />,   link: "https://github.com/Shivam91x" },
-  { name: "LinkedIn", icon: <FaLinkedin />, link: "https://www.linkedin.com/in/shivam-yadav0001/" },
-  { name: "WhatsApp",  icon: <FaWhatsapp />,  link: "https://whatsapp.com/+919691214330" },
+  { name: "GitHub", icon: <FaGithub />, link: "https://github.com/Shivam91x" },
+  {
+    name: "LinkedIn",
+    icon: <FaLinkedin />,
+    link: "https://www.linkedin.com/in/shivam-yadav0001/",
+  },
+  {
+    name: "WhatsApp",
+    icon: <FaWhatsapp />,
+    link: "https://wa.me/919691214330",
+  },
 ];
 
 const navLinks = ["Home", "About Us", "Service", "Resume", "Project"];
 
 export default function Footer() {
-  const [email, setEmail] = React.useState("");
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    if (!email || !email.includes("@")) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    setLoading(true);
+
+    const useremail = email;
+
+    console.log(useremail);
+    // Example (fake)
+    setTimeout(() => {
+      toast.success("Thanks! I'll contact you soon 🚀");
+      setEmail("");
+      setLoading(false);
+    }, 1000);
+  };
+
   return (
     <footer className="w-full rounded-t-4xl bg-[#1f1f1f]">
       <div className="w-full rounded-t-2xl px-4 sm:px-6 py-8">
         <div className="mx-auto max-w-7xl rounded-3xl bg-[#242424] px-5 sm:px-8 py-10 text-white">
-
           {/* ── Top CTA ── */}
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
               Let's Connect there
             </h2>
-            <button onClick={() => navigate("/contact ")} className="group inline-flex items-center gap-2 rounded-3xl border border-gray-400 px-6 py-3 font-medium bg-orange-50 cursor-pointer text-black transition-all duration-300 hover:bg-orange-600 hover:text-white hover:shadow-lg w-full sm:w-auto justify-center sm:justify-start">
+            <button
+              onClick={() => navigate("/contact ")}
+              className="group inline-flex items-center gap-2 rounded-3xl border border-gray-400 px-6 py-3 font-medium bg-orange-50 cursor-pointer text-black transition-all duration-300 hover:bg-orange-600 hover:text-white hover:shadow-lg w-full sm:w-auto justify-center sm:justify-start"
+            >
               Connect with me
               <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-2" />
             </button>
@@ -41,7 +73,6 @@ export default function Footer() {
             desktop: 4 columns (all side by side)
           */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-
             {/* Brand */}
             <div className="space-y-4">
               <div className="flex items-center gap-2">
@@ -57,8 +88,8 @@ export default function Footer() {
               <div className="flex gap-4 text-gray-300 text-lg">
                 {socials.map((s) => (
                   <div key={s.name} className="relative group">
-                    
-                     <a href={s.link}
+                    <a
+                      href={s.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="cursor-pointer hover:text-orange-400 scale-x-200 transition-all duration-200"
@@ -107,29 +138,41 @@ export default function Footer() {
                 On very small screens the input can feel cramped,
                 so we let it take full width naturally via flex
               */}
-<div className="
+              <div
+                className="
   flex overflow-hidden rounded-full bg-white w-full max-w-xs
-  focus-within:ring-2 focus-within:ring-orange-400 transition 
-">
-  <div className="flex items-center px-3 text-gray-400">
-    <MdAttachEmail color="orange" size={18} />
-  </div>
+  focus-within:ring-1 focus-within:ring-orange-400 transition 
+"
+              >
+                <div className="flex items-center px-2 text-gray-400">
+                  <MdAttachEmail color="orange" size={18} />
+                </div>
 
-  <input
-    type="email"
-    value={email}
-    onChange={(e) => setEmail(e.target.value)}
-    placeholder="Email Address"
-    className="flex-1 min-w-0 px-2 py-3 text-sm text-gray-800 outline-none"
-  />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email Address"
+                  className="flex-1 min-w-0  py-3 text-sm text-gray-800 outline-none"
+                />
 
-  <button
-    // onClick={handleSubmit}
-    className="bg-orange-500 px-4 cursor-pointer text-white hover:bg-orange-700 transition "
-  >
-    <IoSendSharp />
-  </button>
-</div>
+                <button
+                  onClick={handleSubmit}
+                  className="bg-orange-500 px-3 cursor-pointer text-white hover:bg-orange-700 transition"
+                >
+                  {loading ? "..." : <IoSendSharp />}
+                </button>
+                <Toaster
+                  position="top-right"
+                  toastOptions={{
+                    duration: 3000,
+                    style: {
+                      background: "#333",
+                      color: "#fff",
+                    },
+                  }}
+                />
+              </div>
             </div>
           </div>
 
@@ -140,11 +183,11 @@ export default function Footer() {
           <div className="flex flex-col items-center justify-between gap-3 text-sm text-gray-400 sm:flex-row">
             <p>© {new Date().getFullYear()} Shivam. All Rights Reserved.</p>
             <p className="text-center sm:text-right">
-              User Terms & Conditions <span className="mx-2">|</span> Privacy Policy
+              User Terms & Conditions <span className="mx-2">|</span> Privacy
+              Policy
             </p>
           </div>
-
-      </div>
+        </div>
       </div>
     </footer>
   );
