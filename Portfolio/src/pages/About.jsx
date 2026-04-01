@@ -110,11 +110,11 @@ export default function WhyHireMe() {
             {/* Stats */}
             <div className="mt-2 grid grid-cols-2 gap-6 sm:grid-cols-3">
               <div>
-                <p className="text-2xl font-extrabold text-gray-900">15+</p>
+                <p className="text-2xl font-extrabold text-gray-900">10+</p>
                 <p className="text-sm text-gray-500">Projects Completed</p>
               </div>
               <div>
-                <p className="text-2xl font-extrabold text-gray-900">1+ Year</p>
+                <p className="text-2xl font-extrabold text-gray-900">5+months</p>
                 <p className="text-sm text-gray-500">Experience</p>
               </div>
               <div>
@@ -125,7 +125,7 @@ export default function WhyHireMe() {
 
             <div className="pt-4">
               <a
-                href="#contact"
+                href="/contact"
                 className="group inline-flex items-center gap-2 rounded-3xl border bg-slate-100 shadow-sm border-gray-300 px-6 py-3 font-medium text-black transition-all duration-300 hover:bg-orange-600 hover:text-white hover:shadow-lg"
               >
                 Hire Me

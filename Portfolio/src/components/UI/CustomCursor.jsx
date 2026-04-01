@@ -5,10 +5,15 @@ export default function CustomCursor() {
   const cursorRef = useRef(null);
   let mouseX = 0;
   let mouseY = 0;
+  let cursorX = 0;
+  let cursorY = 0;
+  let velocityX = 0;
+  let velocityY = 0;
 
   useEffect(() => {
     const cursor = cursorRef.current;
-    const SMOOTHING = 0.05; // 👈 increase/decrease delay here
+    const FRICTION = 0.08;
+    const MAX_VELOCITY = 50;
 
     const move = (e) => {
       mouseX = e.clientX;
@@ -17,12 +22,30 @@ export default function CustomCursor() {
 
     const follow = () => {
       if (!cursor) return;
+              
+      // Calculate direction to mouse
+      const dx = mouseX - cursorX;
+      const dy = mouseY - cursorY;
 
-      const x = cursor.offsetLeft;
-      const y = cursor.offsetTop;
+      // Smooth following without bounce
+      velocityX = dx * 0.12;
+      velocityY = dy * 0.12;
 
-      cursor.style.left = x + (mouseX - x) * SMOOTHING + "px";
-      cursor.style.top = y + (mouseY - y) * SMOOTHING + "px";
+      // Update position
+      cursorX += velocityX;
+      cursorY += velocityY;
+
+      // Calculate speed for shrink effect
+      const speed = Math.sqrt(velocityX * velocityX + velocityY * velocityY);
+      const speedRatio = Math.min(speed / MAX_VELOCITY, 1);
+      
+      // Shrink when fast (0.6 to 1.0 scale)
+      const scale = 1 - speedRatio * 0.4;
+
+      // Apply position and scale
+      cursor.style.left = cursorX + "px";
+      cursor.style.top = cursorY + "px";
+      cursor.style.transform = `translate(-50%, -50%) scale(${scale})`;
 
       requestAnimationFrame(follow);
     };

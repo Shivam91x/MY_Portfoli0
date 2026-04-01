@@ -1,8 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import KeyboardSvg from '../components/KeyboardSVG'
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <>
       <section className="relative w-full overflow-hidden rounded-2xl">
@@ -45,12 +48,12 @@ export default function Home() {
                 />
                 {/* CTA Buttons */}
                 <div className="absolute bottom-12 z-50 flex gap-3">
-                  <button className="group inline-flex items-center gap-2 rounded-3xl border border-gray-400 px-6 py-3 font-medium text-black shadow-2xl transition-all duration-300 bg-slate-100 cursor-pointer hover:bg-orange-600 hover:text-white hover:shadow-lg">
-                    Portfolio
+                  <button onClick={() => navigate("/contact")} className="group inline-flex items-center gap-2 rounded-3xl border border-gray-400 px-6 py-3 font-medium text-black shadow-2xl transition-all duration-300 bg-slate-100 cursor-pointer hover:bg-orange-600 hover:text-white hover:shadow-lg">
+                    Connect
                     <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-2" />
                   </button>
-                  <button className="rounded-full cursor-pointer border border-gray-400 bg-white/60 px-5 py-2 text-sm font-medium text-gray-900 backdrop-blur transition hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-2 focus:ring-gray-00">
-                    Hire me
+                  <button onClick={() => navigate("/resume")} className="rounded-full cursor-pointer border border-gray-400 bg-white/60 px-5 py-2 text-sm font-medium text-gray-900 backdrop-blur transition hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-2 focus:ring-gray-00">
+                    Resume
                   </button>
                 </div>
               </div>

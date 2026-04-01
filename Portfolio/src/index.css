@@ -14,28 +14,39 @@ html {
 }
 
 
-/*  Custom Cursor Css  */
 
-/* hide default cursor */
 .custom-cursor {
   position: fixed;
   top: 0;
   left: 0;
   width: 10px;
   height: 8px;
+  border: 2px solid #f97316;
+  padding: 12px;
   border-radius: 9999px;
-  background: #f97316; /* orange-500 */
   pointer-events: none;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   z-index: 9999;
-  box-shadow: 0 0 42px rgba(249, 115, 22, 0.6);
-  transition: transform 1s linear; /* subtle delay */
+  box-shadow: 
+    0 0 8px rgba(249, 115, 22, 0.8),
+    0 0 16px rgba(249, 115, 22, 0.5),
+    inset 0 0 8px rgba(249, 115, 22, 0.3);
+  transition: box-shadow 0.2s ease-out;
 }
 
-
-a:hover ~ .custom-cursor,
-button:hover ~ .custom-cursor {
-  transform: translate(-50%, -50%) scale(2);
+@keyframes cursorGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 8px rgba(249, 115, 22, 0.8),
+      0 0 16px rgba(249, 115, 22, 0.5),
+      inset 0 0 8px rgba(249, 115, 22, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 0 12px rgba(249, 115, 22, 1),
+      0 0 24px rgba(249, 115, 22, 0.7),
+      inset 0 0 12px rgba(249, 115, 22, 0.5);
+  }
 }
 
 

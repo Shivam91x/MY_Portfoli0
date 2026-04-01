@@ -7,7 +7,7 @@ const projects = [
     desc: "Enterprise-grade eLogbook with role-based access, admin workflows, session tracking and dashboards.",
     tech: ["React", "Tailwind", "RBAC", "API"],
     image: "/projectImgs/medicef.png",
-    live: "#",
+    live: "https://elog-medicef.vidyagxp.com/",
     github: "#",
   },
   {
@@ -24,15 +24,15 @@ const projects = [
     tech: ["React", "Tailwind", "UI"],
     image: "/projectImgs/portfolio.png",
     live: "#",
-    github: "#",
+    github: "https://github.com/Shivam91x/MY_Portfoli0",
   },
   {
     title: "Repairing Website",
     desc: "Created a highly responsive and user-friendly repairing website.",
     tech: ["React", "Tailwind", "UI", "GSAP"],
     image: "/projectImgs/repairing.png",
-    live: "#",
-    github: "#",
+    live: "https://repairing-web.netlify.app/",
+    github: "https://github.com/Shivam91x/Repairing",
   },
 ];
 
