@@ -93,7 +93,7 @@ export default function Services() {
   return (
     <section
       className="relative mb-4 min-h-screen bg-contain px-3 py-12 sm:px-6 md:px-8 lg:px-12"
-      style={{ backgroundImage: "url('/ServiceBg.png')", backgroundSize: "cover", backgroundPosition: "center" }}
+      style={{ backgroundImage: "url('/ServiceBg.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
     >
       {/* Overlay for readability */}
       <div className="absolute inset-0 rounded-4xl" />

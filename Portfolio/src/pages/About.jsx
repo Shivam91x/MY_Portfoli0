@@ -41,7 +41,7 @@ export default function WhyHireMe() {
 
                 {/* Image */}
                 <img
-                  src="/HomeImg.png"
+                  src="/HomeImg.webp"
                   alt="Why hire me"
                   loading="lazy"
                   className="relative z-10  h-[460px] w-[300px] shadow-2xs  max-w-full rounded-2xl object-cover transition-all duration-500 group-hover:-translate-y-3"

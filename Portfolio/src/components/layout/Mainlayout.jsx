@@ -6,6 +6,7 @@ import Footer from "../Footer";
 import { useLocation, useNavigate } from "react-router-dom";
 import CustomCursor from "../UI/CustomCursor";
 import Layout from "./Layout";
+import AIChatbot from "../UI/Aichatbot ";
 
 export default function MainLayout() {
   const location = useLocation();
@@ -33,6 +34,7 @@ export default function MainLayout() {
       <main >
         <Outlet />
       </main>
+      <AIChatbot />
       <Footer />
       </Layout>
     </>

@@ -150,3 +150,8 @@ html {
 .animate-float-slow {
   animation: floatSlow 8s ease-in-out infinite;
 }
+
+:root {
+  --primary: #6366f1;
+  --secondary: #8b5cf6;
+}
